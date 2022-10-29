@@ -1,20 +1,28 @@
 ﻿int randomNum = GetRandomNum(10, 100);
 Console.WriteLine(randomNum);
 
-int max = randomNum % 10; /// задается последнее число, корое решено считать максимальным
-randomNum = randomNum / 10; /// переменная уменьшается на 1 разряд
+int maxNumber = FindMaxNumber(randomNum);
+Console.WriteLine($"Большее число - {maxNumber}");
 
-while(randomNum > 0)
+int FindMaxNumber(int number)
 {
-    Console.WriteLine($"Random number - {randomNum}");
-    int lastNum = randomNum % 10;
-    if (lastNum > max)
+    int max = number % 10;
+    number = number / 10;
+       while (number > 0)
     {
-        max = lastNum;
+        int lastNum = number % 10;
+        if (lastNum > max)
+        {
+            max = lastNum;
+        }
+        number = number / 10;
     }
-    randomNum = randomNum / 10;
+    return max;
 }
-Console.WriteLine($"Большее число - {max}");
+
+
+
+
 
 int GetRandomNum(int minValue, int maxValue)
 {
