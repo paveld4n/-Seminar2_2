@@ -1,7 +1,7 @@
 ﻿int number = GetRandomNumber(100, 1000);
 int result = DeleteSecondDigit(number);
-Console.WriteLine(number);
-Console.WriteLine(result);
+Console.WriteLine($"Выпавшее число - {number}");
+Console.WriteLine($"Без средней цифры - {result}");
 
 int DeleteSecondDigit(int number)
 {
