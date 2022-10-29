@@ -1,4 +1,4 @@
-﻿int randomNum = GetRandomNum(100, 100);
+﻿int randomNum = GetRandomNum(10, 100);
 Console.WriteLine(randomNum);
 
 int max = randomNum % 10; /// задается последнее число, корое решено считать максимальным
@@ -6,6 +6,7 @@ randomNum = randomNum / 10; /// переменная уменьшается на
 
 while(randomNum > 0)
 {
+    Console.WriteLine($"Random number - {randomNum}");
     int lastNum = randomNum % 10;
     if (lastNum > max)
     {
@@ -13,9 +14,7 @@ while(randomNum > 0)
     }
     randomNum = randomNum / 10;
 }
-
-int lastNum = randomNum % 10;
-Console.WriteLine(lastNum);
+Console.WriteLine($"Большее число - {max}");
 
 int GetRandomNum(int minValue, int maxValue)
 {
