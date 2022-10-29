@@ -1,4 +1,4 @@
-﻿int randomNum = GetRandomNum(10, 100);
+﻿int randomNum = GetRandomNum(100, 1000);
 Console.WriteLine(randomNum);
 
 int maxNumber = FindMaxNumber(randomNum);
@@ -22,11 +22,19 @@ int FindMaxNumber(int number)
 
 
 
-
-
 int GetRandomNum(int minValue, int maxValue)
 {
     Random random = new Random();
     int randomNum = random.Next(minValue, maxValue);
     return randomNum;
+}
+
+int[] array = new int[3];
+int number = 153;
+
+for(int i = 0; i < array.Length; i++)
+{
+    int lastValue = number % 10;
+    array[i] = lastValue;
+    number = number /10;
 }
